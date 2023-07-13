@@ -1,0 +1,40 @@
+<div class="col-md">
+
+    <h3 class="text-center">Nuevo Movimiento</h3>
+
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+
+            <label >fecha</label>
+            <input type="date"
+                class="form-control date"
+                id="date"
+                [(ngModel)]="transaction.date"
+                name="date">
+
+            <label>Tipo</label>
+            <select class="form-control" [(ngModel)]="transaction.type" name="type" required>
+                <option value="debit">Debito</option>
+                <option value="credit">Credito</option>
+            </select>
+
+            <label>Valor</label>
+            <input type="number"
+                class="form-control"
+                id="value"
+                [(ngModel)]="transaction.value"
+                name="value">
+
+
+            <label>Numero de cuenta</label>
+            <select class="form-control" [(ngModel)]="transaction.account.number" name="account" required>
+                <option *ngFor="let account of accounts" [value]="account.idAccount">{{ account.number }}</option>
+            </select>
+
+        </div>
+
+        <button class="button">Guardar</button>
+
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="col-md">
+    <h3 class="text-center">Editar cuenta</h3>
+    <form (ngSubmit)="onSubmit()" #accountForm="ngForm">
+        <div class="form-group">
+            <label>Numero de cuenta</label>
+            <input type="text" class="form-control" id="number" [(ngModel)]="account.number" name="number" required>
+            <select class="form-control" [(ngModel)]="account.type" name="type" required>
+                <option value="ahorro">Ahorro</option>
+                <option value="corriente">Corriente</option>
+            </select>
+            <label>Saldo</label>
+            <input type="number" class="form-control" id="balance" [(ngModel)]="account.balance" name="balance" required [disabled]="true">
+            <label>Estado</label>
+            <input type="text" class="form-control" id="status" [(ngModel)]="account.status" name="status" required>
+            <label>Cliente</label>
+            <input type="text" class="form-control" id="client" [(ngModel)]="account.client.name" name="client" required [disabled]="true">
+        </div>
+        <button class="button" [disabled]="accountForm.invalid">Guardar</button>
+    </form>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="col-md">
+    <h3 class="text-center">Editar cliente</h3>
+    <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="client.name" name="name" required>
+            <label>Identificacion</label>
+            <input type="text" class="form-control" id="identification" [(ngModel)]="client.identification" name="identification" required>
+            <label>Direccion</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="client.address" name="address" required>
+            <label>Telefono</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="client.phone" name="phone" required>
+            <label>Edad</label>
+            <input type="number" class="form-control" id="age" [(ngModel)]="client.age" name="age" required>
+            <label>Genero</label>
+            <select class="form-control" [(ngModel)]="client.gender" name="gender" required>
+                <option value="masc">Masculino</option>
+                <option value="fem">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+            <label>Contraseña</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="client.password" name="password" required>
+        </div>
+        <button class="button" [disabled]="clientForm.invalid">Guardar</button>
+    </form>
+</div>

@@ -1,0 +1,62 @@
+<div class="col-md">
+
+    <h3 class="text-center"> Nuevo Cliente</h3>
+
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+
+            <label>Nombre</label>
+            <input type="text"
+                class="form-control"
+                id="name"
+                [(ngModel)]="client.name"
+                name = "name">
+
+            <label>Identificacion</label>
+            <input type="text"
+                class="form-control"
+                id="identification"
+                [(ngModel)]="client.identification"
+                name = "identification">
+
+            <label>Direccion</label>
+            <input type="text"
+                class="form-control"
+                id="address"
+                [(ngModel)]="client.address"
+                name = "address">
+
+            <label>Telefono</label>
+            <input type="text"
+                class="form-control"
+                id="phone"
+                [(ngModel)]="client.phone"
+                name = "phone">
+
+            <label>Edad</label>
+            <input type="number"
+                class="form-control"
+                id="age"
+                [(ngModel)]="client.age"
+                name = "age">
+
+            <label>Genero</label>
+            <select class="form-control" [(ngModel)]="client.gender" name="gender">
+                <option value="masc">Masculino</option>
+                <option value="fem">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+            <label>Contraseña</label>
+            <input type="password"
+                class="form-control"
+                id="password"
+                [(ngModel)]="client.password"
+                name = "password">
+        </div>
+
+        <button class="button">Guardar</button>
+
+    </form>
+</div>
+

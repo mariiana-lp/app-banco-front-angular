@@ -1,0 +1,40 @@
+
+<div id="container">
+    <div>
+        <h2>Movimientos</h2>
+    <button routerLink="/save-transaction" class="button-new">Nuevo</button>
+    </div>
+    <input type="text" class="search-bar" placeholder="Buscar..." >
+    <router-outlet></router-outlet>
+    <table class="table-table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>id</th>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Saldo Actual</th>
+                <th>Numero de cuenta</th>
+                <th>Nombre de Cliente</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor= "let transaction of transactions">
+                <td>{{transaction.idTransaction}}</td>
+                <td>{{transaction.date}}</td>
+                <td>{{transaction.type}}</td>
+                <td>{{transaction.value}}</td>
+                <td>{{transaction.balance}}</td>
+                <td>{{transaction.account.number}}</td>
+                <td>{{transaction.account.client.name}}</td>
+                <td>
+                    <button (click)= "deleteTransaction(transaction.idTransaction)" class="delete-button">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <p class="message" *ngIf="message">{{ message }}</p>
+    
+</div>
+

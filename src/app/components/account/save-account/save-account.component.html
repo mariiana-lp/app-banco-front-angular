@@ -1,0 +1,46 @@
+<div class="col-md">
+
+    <h3 class="text-center">Nueva Cuenta</h3>
+
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+
+            <label>Numero de cuenta</label>
+            <input type="number"
+                class="form-control"
+                id="number"
+                [(ngModel)]="account.number"
+                name="number">
+
+            <label>Tipo</label>
+            <select class="form-control" [(ngModel)]="account.type" name="type" required>
+                <option value="ahorro">Ahorro</option>
+                <option value="corriente">Corriente</option>
+            </select>
+
+            <label>Saldo</label>
+            <input type="number"
+                class="form-control"
+                id="balance"
+                [(ngModel)]="account.balance"
+                name="balance">
+
+            <label>Estado</label>
+            <input type="text"
+                class="form-control"
+                id="status"
+                [(ngModel)]="account.status"
+                name="status">
+
+        <label>Cliente</label>
+        <select class="form-control" [(ngModel)]="account.client.idPerson" name="client" required>
+            <option *ngFor="let client of clients" [value]="client.idPerson">{{ client.name }}</option>
+        </select>
+
+        </div>
+
+        <button class="button">Guardar</button>
+
+    </form>
+</div>
