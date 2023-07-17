@@ -12,6 +12,8 @@ import { UpdateClientComponent } from './components/clients/update-client/update
 import { UpdateAccountComponent } from './components/account/update-account/update-account.component';
 import { SaveAccountComponent } from './components/account/save-account/save-account.component';
 import { SaveTransactionComponent } from './components/transaction/save-transaction/save-transaction.component';
+import { GenerateReportComponent } from './components/report/generate-report/generate-report.component';
+
 
 
 
@@ -25,7 +27,8 @@ import { SaveTransactionComponent } from './components/transaction/save-transact
     ListAccountsComponent,
     ListTransactionsComponent,
     UpdateClientComponent,
-    UpdateAccountComponent
+    UpdateAccountComponent,
+    GenerateReportComponent,
    
   ],
   imports: [

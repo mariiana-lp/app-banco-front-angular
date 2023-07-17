@@ -8,6 +8,7 @@ import { UpdateClientComponent } from './components/clients/update-client/update
 import { UpdateAccountComponent } from './components/account/update-account/update-account.component';
 import { SaveAccountComponent } from './components/account/save-account/save-account.component';
 import { SaveTransactionComponent } from './components/transaction/save-transaction/save-transaction.component';
+import { GenerateReportComponent } from './components/report/generate-report/generate-report.component';
 
 const routes: Routes = [
   {path:'clients', component:ListClientsComponent},
@@ -19,7 +20,11 @@ const routes: Routes = [
   {path: 'update-account/:id', component:UpdateAccountComponent},
 
   {path: 'transactions', component: ListTransactionsComponent},
-  {path:'save-transaction', component:SaveTransactionComponent}
+  {path:'save-transaction', component:SaveTransactionComponent},
+
+  {path:'report', component:GenerateReportComponent}
+
+
   
 ];
 

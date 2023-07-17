@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Generar Reporte</h2>
+
+    <select class="form-control"  name="client" 
+    (change)="filterByClient($event.target['value'])">
+        <option value="">seleccionar cliente</option>
+        <option *ngFor="let client of clients" [value]="client.idPerson">{{ client.name }}</option>
+    </select>
+
+
+      <select class="form-control"  name="date">
+        <option value="">seleccionar fecha</option>
+        <option *ngFor="let item of transactions" [value]="item.date">{{ item.date }}</option>
+    </select>
+    
+    <button class="button"  (click)="generatePDF()">Generar PDF</button>
+  </div>
